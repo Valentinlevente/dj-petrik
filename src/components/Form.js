@@ -3,11 +3,11 @@ import React from 'react'
 const Form = () => {
 
     const send = () => {
-        let email = document.getElementById("email").value;
+        let name = document.getElementById("name").value;
         let date = document.getElementById("date").value;
         let text = document.getElementById("text").value;
-        if(email.length !== 0 && date.length !== 0 && text.length !== 0){
-            alert("Köszönjük!");
+        if(name.length !== 0 && date.length !== 0 && text.length !== 0){
+            alert("Köszönjük a megkeresését!");
         }
     }
 
@@ -17,7 +17,7 @@ const Form = () => {
             <p>
                 <label>
                     Név:<br />
-                    <input name="email" type="text" id="email" required/>
+                    <input name="name" type="text" id="name" required placeholder="Név..."/>
                 </label>
             </p>
             <p>
@@ -26,10 +26,12 @@ const Form = () => {
                     <input name="date" type="date" id="date" required/>
                 </label>
             </p>
-            <p>
-                <textarea rows={6} id="text" required>
-
-                </textarea>
+            <p> 
+                <label>
+                    Üzenet:<br />
+                    <textarea rows={6} id="text" required placeholder="Ide írd az üzeneted...">
+                    </textarea>
+                </label>
             </p>
             <p>
                 <input type="submit" value="OK" id="submit" onClick={()=> send()} />
